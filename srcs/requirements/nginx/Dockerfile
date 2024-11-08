@@ -1,1 +1,1 @@
-FROM debian::kasmweb/debian-bullseye-desktop
+FROM debian:bullseye
