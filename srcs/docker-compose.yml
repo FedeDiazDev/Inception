@@ -1,23 +1,34 @@
-version: ª
+version: '3.1'
 
 services:
   mariadb:
+    container_name: db
     networks:
       - inception
+    restart: always
     ports:
       - "3306"
   wordpress:
+    container_name: wp
     networks:
       - inception
+    restart: always
     ports:
       - "9000"
   nginx:
+    container_name: nginx
     networks:
       - inception
+    restart: always
     ports:
       - "443:443"
+
+volumes:
+  wp_database:
+    driver_opts:
+    bind: o
+  wp_website:
 
 networks:
   inception:
     driver: bridge
-
