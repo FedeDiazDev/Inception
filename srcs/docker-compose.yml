@@ -1,16 +1,23 @@
-version: debian:bullseye
+version: ª
 
 services:
   mariadb:
+    networks:
+      - inception
     ports:
       - "3306"
   wordpress:
+    networks:
+      - inception
     ports:
       - "9000"
   nginx:
+    networks:
+      - inception
     ports:
       - "443:443"
 
 networks:
   inception:
-    
+    driver: bridge
+
