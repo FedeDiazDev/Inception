@@ -1,10 +1,10 @@
-version: '3'
+version: '3.3'
 
 services:
   mariadb:
-    container_name: mariadb
     build:
       context: ./requirements/mariadb
+    container_name: mariadb
     volumes:
       - wp_database:/var/lib/mysql
     env_file:
@@ -12,7 +12,7 @@ services:
     networks:
       - docker_network
     ports:
-      - "3306"
+      - "3306:3306"
     restart: always
 
   wordpress:
