@@ -29,7 +29,7 @@ services:
       - docker_network
     ports:
       - "9000"
-    restart: always
+    # restart: always
 
   nginx:
     container_name: nginx
