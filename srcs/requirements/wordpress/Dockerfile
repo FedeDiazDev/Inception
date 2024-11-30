@@ -18,6 +18,6 @@ RUN	chmod +x /var/www/config.sh
 
 WORKDIR /var/www/html
 
-EXPOSE 443
+EXPOSE 9000
 
 CMD ["/var/www/config.sh"]
