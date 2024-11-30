@@ -7,7 +7,7 @@ RUN openssl req -x509 -days 365 -newkey rsa:2048 -nodes \
 	-keyout /etc/ssl/private/fdiaz-gu.key \
 	-out /etc/ssl/certs/fdiaz-gu.crt
 
-COPY ./conf/nginx.conf  /etc/nginx/sites-available/nginx-wp.conf
-RUN ln -s /etc/nginx/sites-available/nginx-wp.conf /etc/nginx/sites-enabled/
+COPY ./conf/nginx.conf  /etc/nginx/conf.d/nginx.conf
 
+EXPOSE 443
 ENTRYPOINT [ "nginx", "-g","daemon off;" ]
