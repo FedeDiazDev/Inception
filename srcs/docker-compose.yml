@@ -20,7 +20,7 @@ services:
     build:
       context: ./requirements/wordpress
     volumes:
-      - wp_database:/var/www/html
+      - wp_website:/var/www/html
     env_file:
       - .env
     depends_on:
@@ -28,8 +28,8 @@ services:
     networks:
       - docker_network
     ports:
-      - "9000"
-    # restart: always
+      - "9000:9000"
+    restart: always
 
   nginx:
     container_name: nginx
@@ -41,6 +41,8 @@ services:
       - wordpress
     networks:
       - docker_network
+    volumes:
+      - wp_website:/var/www/html      
     ports:
       - "443:443"
     restart: always
