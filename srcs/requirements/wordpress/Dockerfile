@@ -2,7 +2,7 @@ FROM debian:bullseye
 
 RUN apt-get -y update && \ 
 	apt-get -y upgrade && \
-	apt-get -y install curl php7.4-fpm php-mysql sendmail mariadb-client
+	apt-get -y install curl php7.4-fpm php-mysql sendmail 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --silent && \
     chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
 
